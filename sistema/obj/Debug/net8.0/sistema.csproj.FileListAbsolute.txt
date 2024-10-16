@@ -140,3 +140,4 @@ C:\Users\51021784826\Desktop\Lucas Gonçalves de Oliveira\sistema\bin\Debug\net8
 C:\Users\51021784826\Desktop\Lucas Gonçalves de Oliveira\sistema\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\51021784826\Desktop\Lucas Gonçalves de Oliveira\sistema\obj\Debug\net8.0\sistema.csproj.AssemblyReference.cache
 C:\Users\51021784826\Desktop\Lucas Gonçalves de Oliveira\sistema\obj\Debug\net8.0\sistema.csproj.CopyComplete
+C:\Users\51021784826\Desktop\Lucas Gonçalves de Oliveira\sistema\obj\Debug\net8.0\sistema.sourcelink.json
