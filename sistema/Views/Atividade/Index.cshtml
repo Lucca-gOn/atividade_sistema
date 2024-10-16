@@ -1,28 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Atividades";
 }
+
 @if (ViewBag.NomeProfessor == null)
 {
     <a asp-controller="Login">Login</a>
 }
 else
 {
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+        <h1 style="font-family: 'Inter', sans-serif; font-weight: 600; font-size: 26px; line-height: 31.47px; color: #000;">
+            Atividades da Turma: @ViewBag.NomeTurma
+        </h1>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#cadastrarAtividadeModal" style="border-width: 2px;">
+            Cadastrar Atividade
+        </button>
+    </div>
 
-
-    <form asp-action="CadastrarAtividade" method="post">
-        <input type="hidden" name="turmaId" value="@ViewBag.TurmaId" />
-
-        <input type="text" name="descricao" placeholder="Nome" required />
-        <button type="submit">Cadastrar Atividade</button>
-    </form>
-
-    <h4>Turma: @ViewBag.NomeTurma</h4>
-
-    <table>
+    <table class="table table-hover align-middle">
         <thead>
             <tr>
-                <th>Número</th>
-                <th>Nome</th>
+                <th scope="col">Número</th>
+                <th scope="col">Nome</th>
             </tr>
         </thead>
         <tbody>
@@ -35,5 +34,29 @@ else
             }
         </tbody>
     </table>
-}
 
+    <!-- Modal -->
+    <div class="modal fade" id="cadastrarAtividadeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarAtividadeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastrarAtividadeModalLabel">Cadastrar Atividade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form asp-action="CadastrarAtividade" method="post">
+                    <div class="modal-body">
+                        <input type="hidden" name="turmaId" value="@ViewBag.TurmaId" />
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Nome da Atividade</label>
+                            <input type="text" id="descricao" name="descricao" class="form-control" placeholder="Nome" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
